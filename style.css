@@ -258,7 +258,7 @@ z-index: -1;
 }
 @media (min-width:1440px) {
   .arrow-btn{
-    top: calc(70.5% + 1rem);
+    top: calc(69% + 1rem);
   }
   
 }
