@@ -11,7 +11,6 @@ arrrowRight.addEventListener('click', () =>{
   slide1.classList.add('hidden')
   slide2.classList.remove('hidden')
   slide2.classList.add('show')
-
 });
 arrrowLeft.addEventListener('click', () =>{
 
