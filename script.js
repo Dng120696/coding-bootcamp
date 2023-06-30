@@ -1,20 +1,27 @@
 "use strict";
 
-const arrrowLeft = document.querySelector('.btn-arrow-left');
-const arrrowRight= document.querySelector('.btn-arrow-right');
-const slide2 = document.querySelector('.slide-2');
-const slide1 = document.querySelector('.slide-1');
+const boxes = document.querySelectorAll('.section')
+const previousBtn = document.querySelector('.previous-btn')
+const nextBtn = document.querySelector('.next-btn')
+let currSlide = 0;
+const maxSlide = boxes.length - 1;
 
-// console.log(arrrowLeft,arrrowRight);
+const goToSlide = ( curr) => {
+  boxes.forEach(
+    (box, i) => (box.style.transform = `translateX(${100 * (i - curr)}%)`)
+  );
+};
+goToSlide(0);
 
-arrrowRight.addEventListener('click', () =>{
-  slide1.classList.add('hidden')
-  slide2.classList.remove('hidden')
-  slide2.classList.add('show')
-});
-arrrowLeft.addEventListener('click', () =>{
+const nextSlide = () => {
+  currSlide === maxSlide ? (currSlide = 0) : currSlide++;
+  goToSlide(currSlide);
 
-  slide1.classList.remove('hidden')
-  slide2.classList.add('hidden')
-  slide2.classList.remove('show')
-});
+};
+
+const previousSlide = () => {
+  currSlide === 0 ? (currSlide = maxSlide) : currSlide--;
+  goToSlide(currSlide);
+};
+previousBtn.addEventListener('click',previousSlide)
+nextBtn.addEventListener('click',nextSlide)
