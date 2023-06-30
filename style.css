@@ -24,24 +24,22 @@ body {
   min-height: 100vh;
   overflow: hidden;
 }
-body::after{
-  content: '';
+body::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: clamp(20rem, 24vw, 25rem);
   height: 20%;
-  background: url(./images/pattern-curve.svg)no-repeat bottom left/ 100%;
+  background: url(./images/pattern-curve.svg) no-repeat bottom left/ 100%;
   z-index: -1;
 }
 .container {
-  width: clamp(30rem, 90%, 120rem);
-  margin: 2rem auto;
-  min-height: 80vh;
-  /* border: 1px solid green; */
+  width: 30rem;
+  margin: 0 auto;
+  height: 60rem;
   position: relative;
   overflow: hidden;
-
 }
 .container::before,
 .container::after {
@@ -53,20 +51,21 @@ body::after{
 }
 .container::before {
   top: 0;
+  left: 0;
   background: url(./images/pattern-bg.svg) no-repeat center center / contain;
-  width: 100%;
+  width: 30rem;
 }
 .container::after {
-  bottom: -6.5%;
+  bottom: -4rem;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
   background: url(./images/pattern-quotes.svg) no-repeat center center / contain;
-  width:clamp(8rem,9vw,10rem);
+  width: clamp(6rem, 7vw, 8rem);
 }
 .arrow-buttons {
   position: absolute;
-  top: 46%;
+  top: 27rem;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
@@ -74,6 +73,7 @@ body::after{
   box-shadow: 5px 0 25px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem 1.5rem;
   border-radius: 5rem;
+  cursor: pointer;
 }
 .previous-btn {
   padding-right: 1.25rem;
@@ -81,6 +81,7 @@ body::after{
 .next-btn {
   padding-left: 1.25rem;
 }
+
 img {
   max-width: 100%;
   object-fit: cover;
@@ -97,30 +98,25 @@ p {
   color: var(--Dark-Blue);
 }
 .name-position {
-  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  font-size: 1.6rem;
   margin: 0;
 }
-
 .section {
   position: absolute;
   top: 0;
   left: 0;
   flex-direction: column-reverse;
-  gap: 5rem;
+  gap: 4rem;
   justify-content: center;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  /* border: 1px solid red; */
   transition: transform 600ms;
-
-
 }
-
 .section article {
   flex: 1;
 }
-.info{
+.info {
   position: relative;
   z-index: 100;
 }
@@ -138,92 +134,69 @@ article img {
   color: var(--Grayish-Blue);
   font-weight: 500;
 }
-@media (max-width:320px) {
-  article img{
-    transform: scale(0.78) translateY(3rem);
+
+@media (min-width: 768px) {
+  .container {
+    width: 65rem;
+    height: 50rem;
   }
-  .arrow-buttons{
-    top: 44%;
-  }
-  .container::after{
-    bottom: -3.5%;
-  }
-}
-@media (min-width:425px) {
-  article img{
-    transform: scale(0.75) translateY(-2rem);
-  }
- 
-  .arrow-buttons{
-    top: 48%;
-  }
-  .container::after{
-    bottom: -13%;
-  }
-  body::after{
-    width: 65%;
-  }
-}
-@media (min-width:768px) {
-  .section{
+  .section {
     flex-direction: row;
     text-align: left;
   }
-  article img{
-    transform: scale(1.1) translateX(-7rem);
+  article img {
+    transform: scale(1.22) translateX(-7.5rem);
   }
-  .container::before{
+  .container::before {
     top: 50%;
     left: 70%;
-    transform: translate(-53%,-52%) scale(1.25);
+    transform: translate(-65%, -53%) scale(1.8);
   }
-  .container::after{
-    top: 30%;
-    left: 14%;
+  .container::after {
+    top: 18%;
+    left: 13%;
   }
-  .arrow-buttons{
-    top: 71%;
+  .arrow-buttons {
+    left: 30rem;
+    top: 43.5rem;
   }
-  body::after{
-    width: 70%;
+  body::after {
+    width: 40%;
+  }
+  p {
+    font-size: 1.8rem;
   }
 }
-@media (min-width:1024px) {
-  body::after{
-    width: 50%;
+@media (min-width: 1024px) {
+  .container {
+    width: 100rem;
+    height: 60rem;
   }
-  article img{
-    transform: scale(1.1) translateX(-8rem);
-  }
-  .container::before{
-    transform: translate(-53%,-52%) scale(1.7);
-  }
-  .container::after{
-    top:29%;
-    left: 12%;
-  }
-  .arrow-buttons{
-    top: 78%;
-  }
-  .name{
-    display: inline-block;
+  article img {
+    transform: scale(1, 0.88) translateX(-15rem);
   }
 
-}
-@media (min-width:1440px) {
-  body::after{
-    width: 45%;
+  .container::before {
+    top: 50%;
+    left: 70%;
+    transform: translate(-68%, -53%) scale(1.8);
   }
-  article img{
-    transform: scale(1.1) translateX(-10rem);
+  .container::after {
+    top: 30%;
+    left: 11%;
   }
-  .container::before{
-    transform: translate(-53.5%,-52%) scale(1.8);
+  .arrow-buttons {
+    left: 48rem;
+    top: 51rem;
   }
-  .container::after{
-    left: 10%;
+  body::after {
+    width: 40%;
+    height: 30%;
   }
-  .arrow-buttons{
-    top: 80%;
+  p {
+    font-size: 2.4rem;
+  }
+  .name {
+    display: inline-block;
   }
 }
