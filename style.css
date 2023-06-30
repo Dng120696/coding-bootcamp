@@ -91,14 +91,14 @@ img {
   align-items: center;
 }
 p {
-  font-size: clamp(1.8rem, 2.2vw, 2.9rem);
+  font-size: clamp(1.8rem, 2.3vw, 3rem);
   font-weight: 300;
   margin-bottom: 2.5rem;
   line-height: 1.6;
   color: var(--Dark-Blue);
 }
 .name-position {
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem,1.7vw,1.8rem);
   margin: 0;
 }
 .section {
@@ -137,7 +137,7 @@ article img {
 
 @media (min-width: 768px) {
   .container {
-    width: 65rem;
+    width: 75rem;
     height: 50rem;
   }
   .section {
@@ -145,57 +145,56 @@ article img {
     text-align: left;
   }
   article img {
-    transform: scale(1.22) translateX(-7.5rem);
+    transform: scale(1.1) translateX(-7.5rem);
   }
   .container::before {
     top: 50%;
     left: 70%;
-    transform: translate(-65%, -53%) scale(1.8);
+    transform: translate(-60%, -53%) scale(1.89);
   }
   .container::after {
-    top: 18%;
-    left: 13%;
+    top: 27.5%;
+    left: 11%;
   }
   .arrow-buttons {
-    left: 30rem;
-    top: 43.5rem;
+    left:38rem;
+    top: 44.5rem;
   }
   body::after {
     width: 40%;
   }
-  p {
-    font-size: 1.8rem;
-  }
+
 }
 @media (min-width: 1024px) {
   .container {
-    width: 100rem;
-    height: 60rem;
+    width: 120rem;
+    height:70rem;
   }
   article img {
-    transform: scale(1, 0.88) translateX(-15rem);
+    transform: scale(1) translateX(-6rem);
   }
 
   .container::before {
     top: 50%;
     left: 70%;
-    transform: translate(-68%, -53%) scale(1.8);
+    transform: translate(-55%, -53%) scale(2.3);
   }
   .container::after {
-    top: 30%;
+    top: 28%;
     left: 11%;
   }
+  .section{
+    gap: 0;
+  }
   .arrow-buttons {
-    left: 48rem;
-    top: 51rem;
+    left:67rem;
+    top: 62rem;
   }
   body::after {
     width: 40%;
     height: 30%;
   }
-  p {
-    font-size: 2.4rem;
-  }
+
   .name {
     display: inline-block;
   }
